@@ -1,0 +1,77 @@
+﻿@model Category
+
+<h1>Fill out the bellow form to add new Category</h1>
+
+
+
+
+
+
+<div class="container">
+
+    <div class="alert" asp-validation-summary="All"  role="alert" style="color:red;">
+       
+    </div>
+
+
+    <div class="rwo align-items-start">
+      
+        <form method="post">
+
+            <div class="mb-3">
+                <label class="form-label" asp-for="name" >Category name</label>
+                <input type="text" class="form-control" asp-for="name" placeholder="your Category name">
+               <span class="text-danger" asp-validation-for="name"></span>
+            </div>
+             <div class="mb-3">
+                <label class="form-label" asp-for="DisplayOrder">Number of Order</label>
+                <input type="text" class="form-control" asp-for="DisplayOrder" placeholder="Enter Order Number  ">
+                <span class="text-danger" asp-validation-for="DisplayOrder"></span>
+            </div>
+
+            <div class="row">
+                    <div class="col-6">
+                        <div class="text-start">
+                            <button type="submit" class="btn btn-success">
+                             <i class="bi bi-plus-circle"></i>
+                             Add</button>
+
+                        </div>
+                     </div>
+                <div class="col-6">
+                    <div class="text-end">
+                        <a asp-action="Index" asp-controller="Category" class="btn btn-danger">
+                            <i class="bi bi-arrow-left-circle"></i>
+                        Back
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+
+
+
+        </form>  
+
+
+
+
+
+
+
+    </div>
+
+</div>
+@section Scripts{
+
+    @{
+        <partial name="_ValidationScriptsPartial" />
+
+}
+
+
+}
+
+
+
+
